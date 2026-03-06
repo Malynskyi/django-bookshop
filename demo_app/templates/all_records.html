@@ -1,0 +1,10 @@
+<span>
+    <p>Demo model</p>
+</span>
+<ul>
+    {% for demo_model in demo_models %}
+    <li>
+        {{ demo_model.name }} - {{ demo_model.is_visible }}
+    </li>
+    {% endfor %}
+</ul>
