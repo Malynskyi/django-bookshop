@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Main Library page</h1>
+    <p><span>Welcome to book world!!</span></p>
+
+    {% if recent %}
+    <div>
+        <ul>
+            {% for book in recent %}
+            <li>
+                <a href="{% url 'book_detail' pk=book.id %}">{{ book }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</body>
+
+</html>

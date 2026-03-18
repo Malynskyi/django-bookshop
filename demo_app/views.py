@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from demo_app.models import DemoModel
+from books.awkward_file import BookOrDemoView
 
 
 def all_demo(request):
@@ -7,4 +8,8 @@ def all_demo(request):
         'demo_models': DemoModel.objects.filter(is_visible=True)
     })
 
-# Create your views here.
+
+class AllDemo(BookOrDemoView):
+    model = DemoModel
+
+
