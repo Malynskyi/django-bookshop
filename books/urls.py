@@ -8,7 +8,8 @@ from books.views import (
     CreateMeeting,
     BookCreateView,
     BookUpdateView,
-    BookDeleteView
+    BookDeleteView,
+    LibrarianPageView
 )
                         
 from books.awkward_file import book_list as awkward_all_rec
@@ -24,4 +25,5 @@ urlpatterns = [
     path('create/', BookCreateView.as_view(), name='create'),
     path('<int:pk>/update/', BookUpdateView.as_view(), name='update'),
     path('<int:pk>/delete/', BookDeleteView.as_view(), name='delete'),
+    path('librarian-page/', LibrarianPageView.as_view(), name='librarian_page'),
 ]

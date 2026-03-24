@@ -123,4 +123,9 @@ class BookDeleteView(PermissionRequiredMixin, DeleteView):
     permission_required = 'books.delete_book'
 
 
+class LibrarianPageView(PermissionRequiredMixin, TemplateView):
+    template_name = "books/librarian_page.html"
+    permission_required = "books.add_book"
+
+
 
