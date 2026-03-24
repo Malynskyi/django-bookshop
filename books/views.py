@@ -16,6 +16,7 @@ from typing import Any
 
 from django.db.models.query import QuerySet
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse_lazy
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import TemplateView, ListView, DetailView, FormView, CreateView
@@ -40,11 +41,12 @@ class MainPage(GodModRequiredMixin, AuthorFilteredTemplateResponseMixin, Templat
     model = Book
 
 
-class BookCreateView(GodModRequiredMixin, CreateView):
+class BookCreateView(PermissionRequiredMixin, CreateView):
     model = Book
     fields = ['title', 'description', 'category', 'is_available']
     template_name = 'books/book_form.html'
     success_url = reverse_lazy('books:list')
+    permission_required = 'books.add_book'
 
 class BookListView(ListView):
     model = Book
@@ -106,17 +108,19 @@ class CreateMeeting(FormView):
         return super().form_valid(form)
     
 
-class BookUpdateView(GodModRequiredMixin, UpdateView): 
+class BookUpdateView(PermissionRequiredMixin, UpdateView): 
     model = Book
     fields = ['title', 'description', 'category', 'is_available']
     template_name = 'books/book_form.html'
     success_url = reverse_lazy('books:list')
+    permission_required = 'books.change_book'
 
 
-class BookDeleteView(GodModRequiredMixin, DeleteView):
+class BookDeleteView(PermissionRequiredMixin, DeleteView):
     model = Book
     template_name = 'books/book_confirm_delete.html'
     success_url = reverse_lazy('books:list')
+    permission_required = 'books.delete_book'
 
 
 

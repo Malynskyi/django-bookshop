@@ -1,0 +1,1059 @@
+INFO 2026-03-24 05:15:00,721 autoreload Watching for file changes with StatReloader
+INFO 2026-03-24 05:15:21,320 middleware Request: GET /
+INFO 2026-03-24 05:15:21,493 middleware Response status: 404
+ERROR 2026-03-24 05:15:21,810 log Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/urls/base.py", line 81, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 151, in __call__
+    return self._postprocess(request, response, toolbar)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 195, in _postprocess
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 103, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/urls/base.py", line 92, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+INFO 2026-03-24 05:15:22,377 middleware Request: GET /favicon.ico
+INFO 2026-03-24 05:15:22,401 middleware Response status: 404
+ERROR 2026-03-24 05:15:22,461 log Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/urls/base.py", line 81, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'djdt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 151, in __call__
+    return self._postprocess(request, response, toolbar)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 195, in _postprocess
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 103, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/base.py", line 174, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/defaulttags.py", line 333, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/base.py", line 1091, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/base.py", line 1052, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/template/defaulttags.py", line 511, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/urls/base.py", line 92, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'djdt' is not a registered namespace
+INFO 2026-03-24 05:18:24,109 autoreload /Users/dimamalynskyi/Python lessons /db_django/db_django_proj/db_django_proj/urls.py changed, reloading.
+INFO 2026-03-24 05:18:24,825 autoreload Watching for file changes with StatReloader
+INFO 2026-03-24 05:18:52,801 middleware Request: GET /
+INFO 2026-03-24 05:18:52,873 middleware Response status: 404
+WARNING 2026-03-24 05:18:53,363 log Not Found: /
+INFO 2026-03-24 05:18:54,611 middleware Request: GET /favicon.ico
+INFO 2026-03-24 05:18:54,628 middleware Response status: 404
+WARNING 2026-03-24 05:18:54,644 log Not Found: /favicon.ico
+INFO 2026-03-24 05:19:05,688 middleware Request: GET /admin/
+INFO 2026-03-24 05:19:05,719 middleware Response status: 302
+INFO 2026-03-24 05:19:05,740 middleware Request: GET /admin/login/
+INFO 2026-03-24 05:19:07,453 middleware Response status: 200
+INFO 2026-03-24 05:19:28,712 middleware Request: POST /admin/login/
+INFO 2026-03-24 05:19:29,126 middleware Response status: 302
+INFO 2026-03-24 05:19:29,144 middleware Request: GET /admin/
+INFO 2026-03-24 05:19:29,197 middleware Response status: 200
+INFO 2026-03-24 05:19:44,152 middleware Request: GET /admin/books/book/
+ERROR 2026-03-24 05:19:44,251 log Internal Server Error: /admin/books/book/
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: books_category
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 710, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1982, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 857, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 142, in __init__
+    self.queryset = self.get_queryset(request)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 533, in get_queryset
+    ) = self.get_filters(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 203, in get_filters
+    spec = field_list_filter_class(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/filters.py", line 217, in create
+    return list_filter_class(
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/filters.py", line 232, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/filters.py", line 273, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 1081, in get_choices
+    return (blank_choice if include_blank else []) + [
+                                                     ^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 390, in __iter__
+    self._fetch_all()
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 95, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1624, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 243, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 164, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: books_category
+INFO 2026-03-24 05:19:44,257 middleware Response status: 500
+INFO 2026-03-24 05:19:57,350 middleware Request: GET /admin/
+INFO 2026-03-24 05:19:57,369 middleware Response status: 200
+INFO 2026-03-24 05:19:59,729 middleware Request: GET /admin/auth/group/
+INFO 2026-03-24 05:19:59,798 middleware Response status: 200
+INFO 2026-03-24 05:19:59,890 middleware Request: GET /admin/jsi18n/
+INFO 2026-03-24 05:19:59,913 middleware Response status: 200
+INFO 2026-03-24 05:20:02,983 middleware Request: GET /admin/books/category/
+ERROR 2026-03-24 05:20:03,042 log Internal Server Error: /admin/books/category/
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: books_category
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 710, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1982, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 857, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 143, in __init__
+    self.get_results(request)
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 300, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/paginator.py", line 189, in count
+    return c()
+           ^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 610, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/query.py", line 656, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/query.py", line 638, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1624, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 243, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 164, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: books_category
+INFO 2026-03-24 05:20:03,045 middleware Response status: 500
+INFO 2026-03-24 05:20:04,719 middleware Request: GET /admin/auth/group/
+INFO 2026-03-24 05:20:04,739 middleware Response status: 200
+INFO 2026-03-24 05:20:06,610 middleware Request: GET /admin/books/meeting/
+ERROR 2026-03-24 05:20:06,657 log Internal Server Error: /admin/books/meeting/
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: books_meeting
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 710, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1982, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 857, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 143, in __init__
+    self.get_results(request)
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 300, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/paginator.py", line 189, in count
+    return c()
+           ^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 610, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/query.py", line 656, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/query.py", line 638, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1624, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 243, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 164, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: books_meeting
+INFO 2026-03-24 05:20:06,659 middleware Response status: 500
+INFO 2026-03-24 05:20:08,283 middleware Request: GET /admin/auth/group/
+INFO 2026-03-24 05:20:08,307 middleware Response status: 200
+INFO 2026-03-24 05:20:09,528 middleware Request: GET /admin/books/publisher/
+ERROR 2026-03-24 05:20:09,572 log Internal Server Error: /admin/books/publisher/
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: books_publisher
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 710, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1982, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 857, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 143, in __init__
+    self.get_results(request)
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 300, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/paginator.py", line 189, in count
+    return c()
+           ^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 610, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/query.py", line 656, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/query.py", line 638, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1624, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 243, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 164, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: books_publisher
+INFO 2026-03-24 05:20:09,574 middleware Response status: 500
+INFO 2026-03-24 05:20:13,762 middleware Request: GET /admin/auth/group/
+INFO 2026-03-24 05:20:13,792 middleware Response status: 200
+INFO 2026-03-24 05:20:15,655 middleware Request: GET /admin/books/book/
+ERROR 2026-03-24 05:20:15,695 log Internal Server Error: /admin/books/book/
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: books_category
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 710, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1982, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 857, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 142, in __init__
+    self.queryset = self.get_queryset(request)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 533, in get_queryset
+    ) = self.get_filters(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 203, in get_filters
+    spec = field_list_filter_class(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/filters.py", line 217, in create
+    return list_filter_class(
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/filters.py", line 232, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/filters.py", line 273, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 1081, in get_choices
+    return (blank_choice if include_blank else []) + [
+                                                     ^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 390, in __iter__
+    self._fetch_all()
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 95, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1624, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 243, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 164, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: books_category
+INFO 2026-03-24 05:20:15,697 middleware Response status: 500
+INFO 2026-03-24 05:20:30,022 middleware Request: GET /admin/auth/group/
+INFO 2026-03-24 05:20:30,042 middleware Response status: 200
+INFO 2026-03-24 05:31:21,965 autoreload /Users/dimamalynskyi/Python lessons /db_django/db_django_proj/books/views.py changed, reloading.
+INFO 2026-03-24 05:31:25,071 autoreload Watching for file changes with StatReloader
+INFO 2026-03-24 05:32:57,780 autoreload /Users/dimamalynskyi/Python lessons /db_django/db_django_proj/books/views.py changed, reloading.
+INFO 2026-03-24 05:33:00,369 autoreload Watching for file changes with StatReloader
+INFO 2026-03-24 05:33:45,573 autoreload /Users/dimamalynskyi/Python lessons /db_django/db_django_proj/books/views.py changed, reloading.
+INFO 2026-03-24 05:33:48,189 autoreload Watching for file changes with StatReloader
+INFO 2026-03-24 05:34:12,376 middleware Request: GET /admin/auth/group/
+INFO 2026-03-24 05:34:12,910 middleware Response status: 200
+INFO 2026-03-24 05:34:16,183 middleware Request: GET /admin/jsi18n/
+INFO 2026-03-24 05:34:16,222 middleware Response status: 200
+INFO 2026-03-24 05:34:22,935 middleware Request: GET /admin/books/book/
+ERROR 2026-03-24 05:34:23,065 log Internal Server Error: /admin/books/book/
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: books_category
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 710, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1982, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 857, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 142, in __init__
+    self.queryset = self.get_queryset(request)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 533, in get_queryset
+    ) = self.get_filters(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 203, in get_filters
+    spec = field_list_filter_class(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/filters.py", line 217, in create
+    return list_filter_class(
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/filters.py", line 232, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/filters.py", line 273, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 1081, in get_choices
+    return (blank_choice if include_blank else []) + [
+                                                     ^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 390, in __iter__
+    self._fetch_all()
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 95, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1624, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 243, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 164, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: books_category
+INFO 2026-03-24 05:34:23,083 middleware Response status: 500
+INFO 2026-03-24 05:34:25,340 middleware Request: GET /admin/auth/group/
+INFO 2026-03-24 05:34:25,382 middleware Response status: 200
+INFO 2026-03-24 05:34:27,267 middleware Request: GET /admin/auth/group/
+INFO 2026-03-24 05:34:27,297 middleware Response status: 200
+INFO 2026-03-24 05:34:27,599 middleware Request: GET /admin/jsi18n/
+INFO 2026-03-24 05:34:27,626 middleware Response status: 200
+INFO 2026-03-24 05:34:31,498 middleware Request: GET /admin/auth/group/
+INFO 2026-03-24 05:34:31,535 middleware Response status: 200
+INFO 2026-03-24 05:34:31,766 middleware Request: GET /admin/jsi18n/
+INFO 2026-03-24 05:34:31,772 middleware Response status: 200
+INFO 2026-03-24 05:34:34,643 middleware Request: GET /admin/auth/group/add/
+INFO 2026-03-24 05:34:40,816 middleware Response status: 200
+INFO 2026-03-24 05:34:41,833 middleware Request: GET /admin/jsi18n/
+INFO 2026-03-24 05:34:41,847 middleware Response status: 200
+INFO 2026-03-24 05:34:42,608 middleware Request: GET /admin/auth/group/add/
+INFO 2026-03-24 05:34:42,643 middleware Response status: 200
+INFO 2026-03-24 05:34:42,737 middleware Request: GET /admin/jsi18n/
+INFO 2026-03-24 05:34:42,746 middleware Response status: 200
+INFO 2026-03-24 05:36:45,551 middleware Request: GET /books/
+ERROR 2026-03-24 05:36:45,824 log Internal Server Error: /books/
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: books_book
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/views/generic/base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/views/generic/base.py", line 145, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/views/generic/list.py", line 178, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/views/generic/list.py", line 128, in get_context_data
+    paginator, page, queryset, is_paginated = self.paginate_queryset(
+                                              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/views/generic/list.py", line 73, in paginate_queryset
+    page = paginator.page(page_number)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/paginator.py", line 177, in page
+    number = self.validate_number(number)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/paginator.py", line 160, in validate_number
+    return self._validate_number(number, self.num_pages)
+                                         ^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/paginator.py", line 195, in num_pages
+    if self.count == 0 and not self.allow_empty_first_page:
+       ^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/paginator.py", line 189, in count
+    return c()
+           ^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 610, in count
+    return self.query.get_count(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/query.py", line 656, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/query.py", line 638, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1624, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 243, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 164, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: books_book
+INFO 2026-03-24 05:36:45,863 middleware Response status: 500
+INFO 2026-03-24 05:37:25,359 middleware Request: POST /admin/auth/group/add/
+INFO 2026-03-24 05:37:25,443 middleware Response status: 302
+INFO 2026-03-24 05:37:25,466 middleware Request: GET /admin/auth/group/
+INFO 2026-03-24 05:37:25,551 middleware Response status: 200
+INFO 2026-03-24 05:37:25,902 middleware Request: GET /admin/jsi18n/
+INFO 2026-03-24 05:37:25,981 middleware Response status: 200
+INFO 2026-03-24 05:37:47,062 middleware Request: GET /admin/books/book/
+ERROR 2026-03-24 05:37:47,121 log Internal Server Error: /admin/books/book/
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: books_category
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/core/handlers/base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 710, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/sites.py", line 247, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 1982, in changelist_view
+    cl = self.get_changelist_instance(request)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/options.py", line 857, in get_changelist_instance
+    return ChangeList(
+           ^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 142, in __init__
+    self.queryset = self.get_queryset(request)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 533, in get_queryset
+    ) = self.get_filters(request)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/views/main.py", line 203, in get_filters
+    spec = field_list_filter_class(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/filters.py", line 217, in create
+    return list_filter_class(
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/filters.py", line 232, in __init__
+    self.lookup_choices = self.field_choices(field, request, model_admin)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/contrib/admin/filters.py", line 273, in field_choices
+    return field.get_choices(include_blank=False, ordering=ordering)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 1081, in get_choices
+    return (blank_choice if include_blank else []) + [
+                                                     ^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 390, in __iter__
+    self._fetch_all()
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 2000, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/query.py", line 95, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1624, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 243, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 164, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/utils.py", line 94, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/dimamalynskyi/Python lessons /db_django/db_django/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 359, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: books_category
+INFO 2026-03-24 05:37:47,128 middleware Response status: 500
+INFO 2026-03-24 05:47:19,381 autoreload Watching for file changes with StatReloader
+INFO 2026-03-24 05:47:35,796 middleware Request: GET /
+INFO 2026-03-24 05:47:36,492 middleware Response status: 404
+WARNING 2026-03-24 05:47:37,430 log Not Found: /
+INFO 2026-03-24 05:47:39,614 middleware Request: GET /favicon.ico
+INFO 2026-03-24 05:47:39,627 middleware Response status: 404
+WARNING 2026-03-24 05:47:39,658 log Not Found: /favicon.ico
+INFO 2026-03-24 05:47:44,796 middleware Request: GET /books/
+INFO 2026-03-24 05:47:44,961 middleware Response status: 200
+INFO 2026-03-24 05:47:53,851 middleware Request: GET /
+INFO 2026-03-24 05:47:54,007 middleware Response status: 404
+WARNING 2026-03-24 05:47:54,099 log Not Found: /
+INFO 2026-03-24 05:47:54,529 middleware Request: GET /
+INFO 2026-03-24 05:47:54,531 middleware Response status: 404
+WARNING 2026-03-24 05:47:54,548 log Not Found: /
+INFO 2026-03-24 05:48:04,050 middleware Request: GET /admin/
+INFO 2026-03-24 05:48:04,298 middleware Response status: 200
+INFO 2026-03-24 05:48:05,224 middleware Request: GET /admin/
+INFO 2026-03-24 05:48:05,236 middleware Response status: 200
+INFO 2026-03-24 05:48:10,722 middleware Request: GET /admin/books/meeting/
+INFO 2026-03-24 05:48:10,808 middleware Response status: 200
+INFO 2026-03-24 05:48:11,206 middleware Request: GET /admin/jsi18n/
+INFO 2026-03-24 05:48:11,256 middleware Response status: 200
+INFO 2026-03-24 05:48:14,856 middleware Request: GET /admin/books/publisher/
+INFO 2026-03-24 05:48:14,890 middleware Response status: 200
+INFO 2026-03-24 05:48:15,152 middleware Request: GET /admin/jsi18n/
+INFO 2026-03-24 05:48:15,160 middleware Response status: 200
+INFO 2026-03-24 05:48:20,084 middleware Request: GET /admin/books/book/
+INFO 2026-03-24 05:48:20,156 middleware Response status: 200
+INFO 2026-03-24 05:48:20,398 middleware Request: GET /admin/jsi18n/
+INFO 2026-03-24 05:48:20,413 middleware Response status: 200
+INFO 2026-03-24 05:48:23,541 middleware Request: GET /admin/books/meeting/
+INFO 2026-03-24 05:48:23,621 middleware Response status: 200
+INFO 2026-03-24 05:48:23,886 middleware Request: GET /admin/jsi18n/
+INFO 2026-03-24 05:48:23,911 middleware Response status: 200
+INFO 2026-03-24 05:48:27,867 middleware Request: GET /admin/books/book/add/
+INFO 2026-03-24 05:48:28,374 middleware Response status: 200
+INFO 2026-03-24 05:48:28,768 middleware Request: GET /admin/jsi18n/
+INFO 2026-03-24 05:48:28,791 middleware Response status: 200
+INFO 2026-03-24 05:48:34,911 middleware Request: GET /admin/books/meeting/
+INFO 2026-03-24 05:48:34,989 middleware Response status: 200
+INFO 2026-03-24 05:48:38,000 middleware Request: GET /admin/demo_app/demomodel/
+INFO 2026-03-24 05:48:38,075 middleware Response status: 200
+INFO 2026-03-24 05:48:38,509 middleware Request: GET /admin/jsi18n/
+INFO 2026-03-24 05:48:38,524 middleware Response status: 200
+INFO 2026-03-24 05:48:40,530 middleware Request: GET /admin/user_account/customuser/
+INFO 2026-03-24 05:48:40,594 middleware Response status: 200
+INFO 2026-03-24 05:48:40,757 middleware Request: GET /admin/jsi18n/
+INFO 2026-03-24 05:48:40,772 middleware Response status: 200
+INFO 2026-03-24 05:48:45,520 middleware Request: GET /admin/auth/group/
+INFO 2026-03-24 05:48:45,578 middleware Response status: 200
+INFO 2026-03-24 05:48:45,936 middleware Request: GET /admin/jsi18n/
+INFO 2026-03-24 05:48:45,947 middleware Response status: 200
+INFO 2026-03-24 05:48:50,359 middleware Request: GET /admin/user_account/customuser/
+INFO 2026-03-24 05:48:50,427 middleware Response status: 200
+INFO 2026-03-24 05:55:07,901 middleware Request: GET /
+INFO 2026-03-24 05:55:08,191 middleware Response status: 404
+WARNING 2026-03-24 05:55:08,673 log Not Found: /
+INFO 2026-03-24 05:55:10,555 middleware Request: GET /user_account/register/
+INFO 2026-03-24 05:55:10,785 middleware Response status: 200

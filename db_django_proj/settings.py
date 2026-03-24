@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'demo_app.apps.DemoAppConfig',
     'books.apps.BooksConfig',
+    "user_account",
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [ 
@@ -49,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "user_account.middleware.RequestLogMiddleware",
 ]
 
 ROOT_URLCONF = 'db_django_proj.urls'
@@ -120,5 +124,42 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
+AUTH_USER_MODEL = "user_account.CustomUser"
+LOGIN_REDIRECT_URL = "books:list"
+LOGOUT_REDIRECT_URL = "user_account:login"
+LOGIN_URL = "user_account:login"
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "simple": {
+            "format": "{levelname} {asctime} {module} {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "file": {
+            "level": "INFO",
+            "class": "logging.FileHandler",
+            "filename": "debug.log",
+            "formatter": "simple",
+        },
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+        },
+    },
+    "root": {
+        "handlers": ["console", "file"],
+        "level": "INFO",
+    },
+}
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

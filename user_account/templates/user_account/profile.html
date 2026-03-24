@@ -1,0 +1,15 @@
+{% extends 'books/base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h2>Profile</h2>
+        <p><strong>Username:</strong> {{ request.user.username }}</p>
+        <p><strong>Email:</strong> {{ request.user.email }}</p>
+        <p><strong>Age:</strong> {{ request.user.age }}</p>
+        <p><strong>Bio:</strong> {{ request.user.bio }}</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'books/base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h2 class="mb-4">Register</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-success">Register</button>
+                    <a href="{% url 'user_account:login' %}" class="btn btn-secondary">Login</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
