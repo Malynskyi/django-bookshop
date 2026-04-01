@@ -17,10 +17,14 @@ Including another URLconf
 
 
 from django.contrib import admin
+from django.http import HttpResponse
 from django.urls import path, include
 
+def home(request):
+    return HttpResponse('Django with Docker, PostgreSQL and Redis is working!')
 
 urlpatterns = [
+    path('', home),
     path('admin/', admin.site.urls),
     path('books/', include(('books.urls', 'books'), namespace='books')),
     path("user_account/", include("user_account.urls")),
