@@ -29,4 +29,6 @@ urlpatterns = [
     path('books/', include(('books.urls', 'books'), namespace='books')),
     path("user_account/", include("user_account.urls")),
     path("__debug__/", include("debug_toolbar.urls")),
+    path("cart/", include("cart.urls")),
+    path("orders/", include("orders.urls")),
 ]

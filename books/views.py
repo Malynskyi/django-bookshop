@@ -33,6 +33,7 @@ from books.mixins import (
 )
 from django.views.generic import UpdateView, DeleteView
 from django.urls import reverse_lazy
+from cart.forms import CartAddBookForm
 
 
 class MainPage(GodModRequiredMixin, AuthorFilteredTemplateResponseMixin, TemplateView):
@@ -50,9 +51,14 @@ class BookCreateView(PermissionRequiredMixin, CreateView):
 
 class BookListView(ListView):
     model = Book
-    template_name = 'books/all_records.html'
+    template_name = 'books/book_list.html'
     context_object_name = 'books'
     paginate_by = 5
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["cart_book_form"] = CartAddBookForm()
+        return context
 
     def get_queryset(self):
         queryset = Book.objects.all()

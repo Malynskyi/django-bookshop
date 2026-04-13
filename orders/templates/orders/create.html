@@ -1,0 +1,7 @@
+<h1>Create order</h1>
+
+<form method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="Place order">
+</form>

@@ -1,0 +1,47 @@
+<h1>Your cart</h1>
+
+{% if cart %}
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Image</th>
+        <th>Book</th>
+        <th>Quantity</th>
+        <th>Remove</th>
+        <th>Unit price</th>
+        <th>Price</th>
+    </tr>
+
+    {% for item in cart %}
+    {% with book=item.book %}
+    <tr>
+        <td>
+            {% if book.image %}
+            <img src="{{ book.image.url }}" width="80">
+            {% endif %}
+        </td>
+        <td>{{ book.title }}</td>
+        <td>
+            <form action="{% url 'cart:cart_add' book.id %}" method="post">
+                {{ item.update_quantity_form.quantity }}
+                {{ item.update_quantity_form.override }}
+                {% csrf_token %}
+                <input type="submit" value="Update">
+            </form>
+        </td>
+        <td>
+            <a href="{% url 'cart:cart_remove' book.id %}">Remove</a>
+        </td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.total_price }}</td>
+    </tr>
+    {% endwith %}
+    {% endfor %}
+
+    <tr>
+        <td colspan="5">Total</td>
+        <td>{{ cart.get_total_price }}</td>
+    </tr>
+</table>
+{% else %}
+<p>Your cart is empty.</p>
+{% endif %}

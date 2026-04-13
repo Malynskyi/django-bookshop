@@ -1,0 +1,17 @@
+<h1>Books</h1>
+
+{% for book in books %}
+<div>
+    <h3>{{ book.title }}</h3>
+    <p>{{ book.author }}</p>
+    <p>{{ book.price }}</p>
+    <a href="{% url 'books:detail' book.id %}">Details</a>
+
+    <form action="{% url 'cart:cart_add' book.id %}" method="post">
+        {{ cart_book_form.quantity }}
+        {{ cart_book_form.override }}
+        {% csrf_token %}
+        <input type="submit" value="Add to cart">
+    </form>
+</div>
+{% endfor %}

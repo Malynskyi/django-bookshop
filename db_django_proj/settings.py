@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'books.apps.BooksConfig',
     "user_account",
     "debug_toolbar",
+    "orders",
+    "cart",
 ]
 
 MIDDLEWARE = [ 
@@ -181,3 +183,10 @@ CACHES = {
         'LOCATION': f'redis://{REDIS_HOST}:{REDIS_PORT}/1',
     }
 }
+
+CART_SESSION_ID = "cart"
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
+STRIPE_PUBLISHABLE_KEY = os.getenv("STRIPE_PUBLISHABLE_KEY")

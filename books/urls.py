@@ -27,3 +27,5 @@ urlpatterns = [
     path('<int:pk>/delete/', BookDeleteView.as_view(), name='delete'),
     path('librarian-page/', LibrarianPageView.as_view(), name='librarian_page'),
 ]
+
+
