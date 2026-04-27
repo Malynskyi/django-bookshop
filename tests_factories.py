@@ -25,12 +25,12 @@ class OrderFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Order
 
-    first_name = "John"
-    last_name = "Doe"
-    email = "john@example.com"
+    first_name = "Dmytro"
+    last_name = "Malynskyi"
+    email = "malynskyidmytro@gmail.com"
     address = "Test street"
     postal_code = "12345"
-    city = "Kyiv"
+    city = "Odessa"
 
 
 class OrderItemFactory(factory.django.DjangoModelFactory):
