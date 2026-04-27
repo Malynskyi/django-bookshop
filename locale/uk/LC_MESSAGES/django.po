@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-25 23:39+0000\n"
+"POT-Creation-Date: 2026-04-27 14:23+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,23 @@ msgstr ""
 "11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: books/models.py:46
+msgid "Book title"
+msgstr ""
+
+#: books/models.py:49 cart/templates/cart/detail.html:12 orders/models.py:44
+msgid "Price"
+msgstr "Ціна"
+
+#: cart/forms.py:12 cart/templates/cart/detail.html:9 orders/models.py:45
+msgid "Quantity"
+msgstr "Кількість"
+
+#: cart/forms.py:18
+msgid "Override"
+msgstr ""
+
 #: cart/templates/cart/detail.html:2
 msgid "Your cart"
 msgstr "Ваш кошик"
@@ -32,10 +49,6 @@ msgstr "Зображення"
 msgid "Book"
 msgstr "Книга"
 
-#: cart/templates/cart/detail.html:9
-msgid "Quantity"
-msgstr "Кількість"
-
 #: cart/templates/cart/detail.html:10
 msgid "Remove"
 msgstr "Видалити"
@@ -43,10 +56,6 @@ msgstr "Видалити"
 #: cart/templates/cart/detail.html:11
 msgid "Unit price"
 msgstr "Ціна за одиницю"
-
-#: cart/templates/cart/detail.html:12
-msgid "Price"
-msgstr "Ціна"
 
 #: cart/templates/cart/detail.html:29
 msgid "Update"
@@ -59,6 +68,54 @@ msgstr "Англійська"
 #: db_django_proj/settings.py:126
 msgid "Ukrainian"
 msgstr "УкраЇнська"
+
+#: orders/forms.py:18 orders/models.py:7
+msgid "First name"
+msgstr ""
+
+#: orders/forms.py:19 orders/models.py:8
+msgid "Last name"
+msgstr ""
+
+#: orders/forms.py:20 orders/models.py:9
+msgid "Email"
+msgstr ""
+
+#: orders/forms.py:21 orders/models.py:10
+msgid "Address"
+msgstr ""
+
+#: orders/forms.py:22 orders/models.py:11
+msgid "Postal code"
+msgstr ""
+
+#: orders/forms.py:23 orders/models.py:12
+msgid "City"
+msgstr ""
+
+#: orders/models.py:13
+#, fuzzy
+#| msgid "Create order"
+msgid "Created"
+msgstr "Створити замовлення"
+
+#: orders/models.py:14
+#, fuzzy
+#| msgid "Update"
+msgid "Updated"
+msgstr "Оновити"
+
+#: orders/models.py:15
+msgid "Paid"
+msgstr ""
+
+#: orders/models.py:16
+msgid "Stripe ID"
+msgstr ""
+
+#: orders/models.py:17
+msgid "Discount"
+msgstr ""
 
 #: orders/templates/orders/cancel.html:3
 msgid "Payment canceled"
@@ -76,7 +133,5 @@ msgstr "Оформити замовлення"
 msgid "Payment successful"
 msgstr "Оплата успішна"
 
-
-msgid "Total"
-msgstr "Всього"
-
+#~ msgid "Total"
+#~ msgstr "Всього"

@@ -20,6 +20,7 @@ from django.utils import timezone
 from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator
 from django.contrib.auth import get_user_model
+from django.utils.translation import gettext_lazy as _
 
 User = get_user_model()
 
@@ -42,10 +43,10 @@ class Category(models.Model):
 
 
 class Book(models.Model):
-    title = models.CharField(max_length=200, verbose_name='Book title',  default=0)
+    title = models.CharField(max_length=200, verbose_name=_("Book title"), default=0)
     published_at = models.DateField(verbose_name='Release date', null=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='Price',  default=0)
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name=_("Price"), default=0)
     objects = models.Manager()
     published = PublishedBookManager()
     description = models.TextField(null=True, blank=True, verbose_name='Description')

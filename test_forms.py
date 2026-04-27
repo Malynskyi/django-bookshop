@@ -21,23 +21,23 @@ def test_cart_add_book_form_has_quantity_field():
 
 def test_order_create_form_valid():
     form = OrderCreateForm(data={
-        "first_name": "John",
-        "last_name": "Doe",
-        "email": "john@example.com",
-        "address": "Test street",
+        "first_name": "Dmytro",
+        "last_name": "Mal",
+        "email": "malynskyidmytro@gmail.com",
+        "address": "Zelensky street",
         "postal_code": "12345",
-        "city": "Kyiv",
+        "city": "Odessa",
     })
     assert form.is_valid()
 
 
 def test_order_create_form_invalid_email():
     form = OrderCreateForm(data={
-        "first_name": "John",
-        "last_name": "Doe",
-        "email": "bad-email",
-        "address": "Test street",
+        "first_name": "Dmytro",
+        "last_name": "Malynskyi",
+        "email": "not-an-email",
+        "address": "Zelensky street",
         "postal_code": "12345",
-        "city": "Kyiv",
+        "city": "Odessa",
     })
     assert not form.is_valid()
