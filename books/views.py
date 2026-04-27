@@ -34,6 +34,7 @@ from books.mixins import (
 from django.views.generic import UpdateView, DeleteView
 from django.urls import reverse_lazy
 from cart.forms import CartAddBookForm
+from django.http import JsonResponse
 
 
 class MainPage(GodModRequiredMixin, AuthorFilteredTemplateResponseMixin, TemplateView):
@@ -132,6 +133,31 @@ class BookDeleteView(PermissionRequiredMixin, DeleteView):
 class LibrarianPageView(PermissionRequiredMixin, TemplateView):
     template_name = "books/librarian_page.html"
     permission_required = "books.add_book"
+
+
+
+
+async def async_books_count(request):
+    count = await Book.objects.acount()
+    return JsonResponse({"books_count": count})
+
+
+async def async_available_books_count(request):
+    count = await Book.objects.filter(is_available=True).acount()
+    return JsonResponse({"available_books_count": count})
+
+
+async def async_first_book(request):
+    book = await Book.objects.afirst()
+
+    if book is None:
+        return JsonResponse({"book": None})
+
+    return JsonResponse({
+        "id": book.id,
+        "title": book.title,
+        "price": str(book.price),
+    })
 
 
 

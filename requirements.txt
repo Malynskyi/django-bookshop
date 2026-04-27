@@ -7,3 +7,9 @@ django-redis
 gunicorn
 psycopg2-binary==2.9.9
 stripe 
+
+
+pytest
+pytest-django
+pytest-cov
+factory-boy

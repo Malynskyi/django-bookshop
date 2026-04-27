@@ -1,14 +1,15 @@
-<h1>Your cart</h1>
+{% load i18n %}
+<h1>{% trans "Your cart" %}</h1>
 
 {% if cart %}
 <table border="1" cellpadding="10">
     <tr>
-        <th>Image</th>
-        <th>Book</th>
-        <th>Quantity</th>
-        <th>Remove</th>
-        <th>Unit price</th>
-        <th>Price</th>
+        <th>{% trans "Image" %}</th>
+        <th>{% trans "Book" %}</th>
+        <th>{% trans "Quantity" %}</th>
+        <th>{% trans "Remove" %}</th>
+        <th>{% trans "Unit price" %}</th>
+        <th>{% trans "Price" %}</th>
     </tr>
 
     {% for item in cart %}
@@ -25,7 +26,7 @@
                 {{ item.update_quantity_form.quantity }}
                 {{ item.update_quantity_form.override }}
                 {% csrf_token %}
-                <input type="submit" value="Update">
+                <input type="submit" value="{% trans 'Update' %}">
             </form>
         </td>
         <td>

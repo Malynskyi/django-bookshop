@@ -1,7 +1,9 @@
-<h1>Create order</h1>
+{% load i18n %}
+
+<h1>{% trans "Create order" %}</h1>
 
 <form method="post">
     {{ form.as_p }}
     {% csrf_token %}
-    <input type="submit" value="Place order">
+    <input type="submit" value="{% trans 'Place order' %}">
 </form>
