@@ -16,6 +16,9 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 def order_create(request):
     cart = Cart(request)
 
+    if len(cart) == 0:
+        return redirect("cart:cart_detail")
+
     if request.method == "POST":
         form = OrderCreateForm(request.POST)
 

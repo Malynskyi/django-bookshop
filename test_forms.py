@@ -1,3 +1,4 @@
+# Generated with AI, reviewed and modified
 import pytest
 
 from cart.forms import CartAddBookForm

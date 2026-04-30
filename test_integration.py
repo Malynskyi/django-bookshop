@@ -64,7 +64,7 @@ def test_integration_cart_remove_book(client):
 @pytest.mark.django_db
 def test_integration_order_create_page_opens(client):
     response = client.get(reverse("orders:order_create"))
-    assert response.status_code == 200
+    assert response.status_code == 302
 
 
 @pytest.mark.django_db

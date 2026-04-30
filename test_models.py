@@ -1,3 +1,4 @@
+# Generated with AI, reviewed and modified
 import pytest
 from books.models import Book
 from orders.models import Order, OrderItem
@@ -21,7 +22,7 @@ def test_book_price():
 def test_order_creation():
     order = OrderFactory()
     assert order.id is not None
-    assert order.email == "john@example.com"
+    assert order.email == "malynskyidmytro@gmail.com"
 
 
 @pytest.mark.django_db

@@ -1,3 +1,4 @@
+# Generated with AI, reviewed and modified
 import pytest
 from django.urls import reverse
 from tests_factories import BookFactory
@@ -26,7 +27,7 @@ def test_cart_detail_view(client):
 @pytest.mark.django_db
 def test_order_create_view_get(client):
     response = client.get(reverse("orders:order_create"))
-    assert response.status_code == 200
+    assert response.status_code == 302
 
 
 @pytest.mark.django_db
