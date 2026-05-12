@@ -25,6 +25,7 @@ def home(request):
     return HttpResponse('Django with Docker, PostgreSQL and Redis is working!')
 
 urlpatterns = [
+    path("api/", include("api.urls")),
     path('__debug__/', include("debug_toolbar.urls")),
 ]
 

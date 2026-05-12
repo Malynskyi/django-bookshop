@@ -13,3 +13,10 @@ pytest
 pytest-django
 pytest-cov
 factory-boy
+
+
+djangorestframework
+django-filter
+djangorestframework-simplejwt
+drf-spectacular
+django-cors-headers
