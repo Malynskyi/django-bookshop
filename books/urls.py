@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.decorators.cache import cache_page
 from books.views import (
     create_meeting,
     all_meeting,
@@ -20,7 +21,7 @@ from books.awkward_file import book_list as awkward_all_rec
 app_name = 'books' 
 
 urlpatterns = [
-    path('', BookListView.as_view(), name='list'),
+    path('', cache_page(60 * 5)(BookListView.as_view()), name='list'),
     path('create-meeting/', create_meeting, name='create_meeting'),
     path('create-meeting-cbv/', CreateMeeting.as_view(), name='create_meeting_cbv'),
     path('all-meetings/', all_meeting, name='all_meeting'),

@@ -7,7 +7,8 @@ from django.db import transaction
 from .models import Order, OrderItem
 from .forms import OrderCreateForm
 from cart.cart import Cart
-from django.core.mail import send_mail
+# from django.core.mail import send_mail
+from books.tasks import send_email_task
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -27,13 +28,13 @@ def order_create(request):
 
             request.session["order_id"] = order.id
 
-            send_mail(
-                'Order created',
-                f'Your order {order.id} has been created successfully.',
-                'admin@example.com',
-                [order.email],
-                fail_silently=True,
-            )
+            transaction.on_commit(
+                lambda: send_email_task.delay(
+                    "Order created",
+                    f"Your order {order.id} has been created successfully.",
+                    [order.email],
+                )
+)
 
             for item in cart:
                 OrderItem.objects.create(

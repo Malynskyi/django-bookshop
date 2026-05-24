@@ -35,6 +35,12 @@ from django.views.generic import UpdateView, DeleteView
 from django.urls import reverse_lazy
 from cart.forms import CartAddBookForm
 from django.http import JsonResponse
+from django.views.decorators.cache import cache_page
+from django.core.cache import cache
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
+from django.core.cache import cache
+from django.http import Http404
 
 
 class MainPage(GodModRequiredMixin, AuthorFilteredTemplateResponseMixin, TemplateView):
@@ -50,6 +56,7 @@ class BookCreateView(PermissionRequiredMixin, CreateView):
     success_url = reverse_lazy('books:list')
     permission_required = 'books.add_book'
 
+@method_decorator(cache_page(60 * 5), name="dispatch")
 class BookListView(ListView):
     model = Book
     template_name = 'books/book_list.html'
@@ -80,7 +87,27 @@ class BookDetail(LoginRequiredMixin, DetailView):
     model = Book
     template_name = 'books/details.html'
     context_object_name = 'book'
-    queryset = Book.objects.filter(is_available=True)
+
+    def get_object(self, queryset=None):
+        book_id = self.kwargs["pk"]
+        cache_key = f"book_detail_{book_id}"
+
+        book = cache.get(cache_key)
+
+        if book is None:
+            book = (
+                Book.objects
+                .select_related("author", "category")
+                .filter(pk=book_id, is_available=True)
+                .first()
+            )
+
+            if book is None:
+                raise Http404("Book not found")
+
+            cache.set(cache_key, book, 60 * 15)
+
+        return book
 
 
 def category_list(request):
