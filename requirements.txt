@@ -20,3 +20,9 @@ django-filter
 djangorestframework-simplejwt
 drf-spectacular
 django-cors-headers
+redis
+django-redis
+celery
+gunicorn
+sentry-sdk
+
