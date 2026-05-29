@@ -24,7 +24,7 @@ DEBUG = False
 
 SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
-DJANGO_ALLOWED_HOSTS=.onrender.com
+DJANGO_ALLOWED_HOSTS = env_list("DJANGO_ALLOWED_HOSTS", default=[".onrender.com"])
 
 CSRF_TRUSTED_ORIGINS = env_list("DJANGO_CSRF_TRUSTED_ORIGINS")
 
