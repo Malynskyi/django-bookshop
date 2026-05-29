@@ -1,4 +1,7 @@
 # Book Store Project
+![Django CI](https://github.com/Malynskyi/django-bookshop/actions/workflows/django.yml/badge.svg)
+
+![Coverage](https://img.shields.io/badge/coverage-70%25-brightgreen)
 
 Django-based book store application with async views, tests and i18n.
 
@@ -8,6 +11,17 @@ Django-based book store application with async views, tests and i18n.
 - Pytest + integration tests
 - Stripe & email mocking
 - Test coverage ≥ 70%
+- Django REST Framework API
+- JWT authentication 
+- Redis caching
+- Celery async tasks
+- Celery Beat periodic tasks
+- Docker + Docker Compose
+- NGINX reverse proxy
+- Gunicorn production server
+- PostgreSQL database
+- Swagger/OpenAPI docs
+- GitHub Actions CI/CD
 
 ## AI Usage
 

@@ -15,19 +15,26 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-
+from django.conf import settings
 from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
+from django.http import HttpResponse, JsonResponse
 
 def home(request):
     return HttpResponse('Django with Docker, PostgreSQL and Redis is working!')
 
+def health_check(request):
+    return JsonResponse({"status": "ok"})
+
 urlpatterns = [
+    path("health/", health_check, name="health_check"),
     path("api/", include("api.urls")),
-    path('__debug__/', include("debug_toolbar.urls")),
 ]
+if settings.DEBUG:
+    urlpatterns.append(path("__debug__/", include("debug_toolbar.urls")))
+
 
 urlpatterns += i18n_patterns(
     path('', home),

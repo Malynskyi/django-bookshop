@@ -67,9 +67,9 @@ def test_integration_order_create_page_opens(client):
     assert response.status_code == 302
 
 
-@pytest.mark.django_db
-@patch("orders.views.send_mail")
-def test_integration_order_create_sends_email(mock_send_mail, client):
+@pytest.mark.django_db(transaction=True)
+@patch("orders.views.send_email_task.delay")
+def test_integration_order_create_sends_email(mock_send_email_task, client):
     book = BookFactory(price="50.00")
     client.post(
         reverse("cart:cart_add", args=[book.id]),
@@ -86,12 +86,12 @@ def test_integration_order_create_sends_email(mock_send_mail, client):
     })
 
     assert response.status_code == 302
-    assert mock_send_mail.called
+    assert mock_send_email_task.called
 
 
 @pytest.mark.django_db
-@patch("orders.views.send_mail")
-def test_integration_order_created_in_db(mock_send_mail, client):
+@patch("orders.views.send_email_task.delay")
+def test_integration_order_created_in_db(mock_send_email_task, client):
     book = BookFactory(price="50.00")
     client.post(
         reverse("cart:cart_add", args=[book.id]),
@@ -110,9 +110,9 @@ def test_integration_order_created_in_db(mock_send_mail, client):
     assert Order.objects.count() == 1
 
 
-@pytest.mark.django_db
-@patch("orders.views.send_mail")
-def test_integration_order_items_created(mock_send_mail, client):
+@pytest.mark.django_db(transaction=True)
+@patch("orders.views.send_email_task.delay")
+def test_integration_order_items_created(mock_send_email_task, client):
     book = BookFactory(price="50.00")
     client.post(
         reverse("cart:cart_add", args=[book.id]),
@@ -133,8 +133,8 @@ def test_integration_order_items_created(mock_send_mail, client):
 
 
 @pytest.mark.django_db
-@patch("orders.views.send_mail")
-def test_integration_order_create_redirects_to_payment(mock_send_mail, client):
+@patch("orders.views.send_email_task.delay")
+def test_integration_order_create_redirects_to_payment(mock_send_email_task, client):
     book = BookFactory(price="50.00")
     client.post(
         reverse("cart:cart_add", args=[book.id]),

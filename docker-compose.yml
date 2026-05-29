@@ -9,6 +9,8 @@ services:
       - "8000"
     env_file:
       - .env
+    environment:
+      DJANGO_SETTINGS_MODULE: db_django_proj.settings.production
     depends_on:
       db:
         condition: service_healthy
@@ -28,6 +30,8 @@ services:
       - .:/app
     env_file:
       - .env
+    environment:
+      DJANGO_SETTINGS_MODULE: db_django_proj.settings.production
     depends_on:
       db:
         condition: service_healthy
@@ -42,6 +46,8 @@ services:
       - .:/app
     env_file:
       - .env
+    environment:
+      DJANGO_SETTINGS_MODULE: db_django_proj.settings.production
     depends_on:
       db:
         condition: service_healthy

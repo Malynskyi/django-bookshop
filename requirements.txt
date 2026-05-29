@@ -4,7 +4,6 @@ django-debug-toolbar==6.2.0
 sqlparse==0.5.5
 redis
 django-redis
-gunicorn
 psycopg2-binary==2.9.9
 stripe 
 
@@ -20,9 +19,14 @@ django-filter
 djangorestframework-simplejwt
 drf-spectacular
 django-cors-headers
-redis
-django-redis
 celery
 gunicorn
 sentry-sdk
+
+whitenoise
+dj-database-url
+python-dotenv
+flake8
+black
+coverage
 
