@@ -55,33 +55,24 @@ X_FRAME_OPTIONS = "DENY"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
+REDIS_URL = os.getenv("REDIS_URL", "redis://redis:6379")
+
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": (
-            f"redis://{os.getenv('REDIS_HOST', 'redis')}:"
-            f"{os.getenv('REDIS_PORT', '6379')}/1"
-        ),
+        "LOCATION": f"{REDIS_URL}/1",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         },
     }
 }
 
-
-CELERY_BROKER_URL = (
-    f"redis://{os.getenv('REDIS_HOST', 'redis')}:"
-    f"{os.getenv('REDIS_PORT', '6379')}/0"
-)
-
+CELERY_BROKER_URL = f"{REDIS_URL}/0"
 CELERY_RESULT_BACKEND = CELERY_BROKER_URL
 
 CELERY_ACCEPT_CONTENT = ["json"]
-
 CELERY_TASK_SERIALIZER = "json"
-
 CELERY_RESULT_SERIALIZER = "json"
-
 CELERY_TIMEZONE = "UTC"
 
 
