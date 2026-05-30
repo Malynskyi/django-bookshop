@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./db_django_proj
+        working-directory: .
     services:
       redis:
         image: redis:7
@@ -29,10 +29,14 @@ jobs:
           python-version: '3.12'
           cache: 'pip' 
 
-      - name: Debug path
+      - name: Install dependencies
         run: |
           pwd
           find . -name requirements.txt
+          python -m pip install --upgrade pip
+          pip install flake8 black pytest pytest-django pytest-cov
+          pip install -r ./requirements.txt
+          pip show Django
 
     # python -m pip install --upgrade pip
     # pip install flake8 black pytest pytest-django pytest-cov
