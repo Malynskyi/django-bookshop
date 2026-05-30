@@ -1,9 +1,9 @@
 # Book Store Project
 ![Django CI](https://github.com/Malynskyi/django-bookshop/actions/workflows/django.yml/badge.svg)
 
-![Coverage](https://img.shields.io/badge/coverage-70%25-brightgreen)
+![Coverage](https://img.shields.io/badge/coverage-91%25-brightgreen)
 
-Django-based book store application with async views, tests and i18n.
+Django-based book store application with REST API, JWT authentication, Redis caching, Celery tasks, Docker, Nginx, CI/CD and PostgreSQL.
 
 ## Features
 - Async views
