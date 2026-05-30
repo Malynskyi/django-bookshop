@@ -1,12 +1,13 @@
-import stripe 
-from django.conf import settings 
-from django.urls import reverse 
+import stripe
+from django.conf import settings
+from django.urls import reverse
 from django.shortcuts import render, redirect
 from django.db import transaction
 
 from .models import Order, OrderItem
 from .forms import OrderCreateForm
 from cart.cart import Cart
+
 # from django.core.mail import send_mail
 from books.tasks import send_email_task
 
@@ -34,7 +35,7 @@ def order_create(request):
                     f"Your order {order.id} has been created successfully.",
                     [order.email],
                 )
-)
+            )
 
             for item in cart:
                 OrderItem.objects.create(
@@ -52,10 +53,11 @@ def order_create(request):
 
     return render(request, "orders/create.html", {"cart": cart, "form": form})
 
+
 def payment_process(request):
     order_id = request.session.get("order_id")
     if not order_id:
-         return redirect("orders:order_create")
+        return redirect("orders:order_create")
 
     order = Order.objects.get(id=order_id)
     order_items = order.items.all()
@@ -76,7 +78,7 @@ def payment_process(request):
                 },
                 "quantity": item.quantity,
             }
-            for item in order_items 
+            for item in order_items
         ],
         mode="payment",
         success_url=request.build_absolute_uri(reverse("orders:payment_success")),
@@ -84,6 +86,7 @@ def payment_process(request):
     )
 
     return redirect(session.url)
+
 
 def payment_success(request):
     order_id = request.session.get("order_id")
@@ -94,6 +97,7 @@ def payment_success(request):
         order.save()
 
     return render(request, "orders/success.html")
+
 
 def payment_cancel(request):
     return render(request, "orders/cancel.html")

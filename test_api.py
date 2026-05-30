@@ -225,7 +225,9 @@ def test_api_cart_remove_book(auth_client):
         {"book_id": book.id, "quantity": 1, "override": False},
         format="json",
     )
-    response = auth_client.post("/api/cart/remove/", {"book_id": book.id}, format="json")
+    response = auth_client.post(
+        "/api/cart/remove/", {"book_id": book.id}, format="json"
+    )
     assert response.status_code == 200
 
 

@@ -32,5 +32,3 @@ class OrderCreateForm(forms.ModelForm):
         except ValidationError:
             raise forms.ValidationError(_("Invalid email"))
         return email
-
-    

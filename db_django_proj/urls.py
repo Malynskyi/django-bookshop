@@ -22,11 +22,14 @@ from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
 from django.http import HttpResponse, JsonResponse
 
+
 def home(request):
-    return HttpResponse('Django with Docker, PostgreSQL and Redis is working!')
+    return HttpResponse("Django with Docker, PostgreSQL and Redis is working!")
+
 
 def health_check(request):
     return JsonResponse({"status": "ok"})
+
 
 urlpatterns = [
     path("health/", health_check, name="health_check"),
@@ -37,10 +40,10 @@ if settings.DEBUG:
 
 
 urlpatterns += i18n_patterns(
-    path('', home),
-    path('admin/', admin.site.urls),
-    path('books/', include(('books.urls', 'books'), namespace='books')),
-    path('user_account/', include("user_account.urls")),
+    path("", home),
+    path("admin/", admin.site.urls),
+    path("books/", include(("books.urls", "books"), namespace="books")),
+    path("user_account/", include("user_account.urls")),
     path("cart/", include("cart.urls")),
     path("orders/", include("orders.urls")),
 )

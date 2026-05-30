@@ -50,4 +50,3 @@ def test_order_total_items():
     order = OrderFactory()
     OrderItemFactory.create_batch(5, order=order)
     assert order.items.count() == 5
-    

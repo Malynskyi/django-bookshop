@@ -21,9 +21,7 @@ ALLOWED_HOSTS = env_list("DJANGO_ALLOWED_HOSTS")
 
 CSRF_TRUSTED_ORIGINS = env_list("DJANGO_CSRF_TRUSTED_ORIGINS")
 
-INSTALLED_APPS = [
-    app for app in INSTALLED_APPS if app != "debug_toolbar"
-]
+INSTALLED_APPS = [app for app in INSTALLED_APPS if app != "debug_toolbar"]
 
 MIDDLEWARE = [
     middleware

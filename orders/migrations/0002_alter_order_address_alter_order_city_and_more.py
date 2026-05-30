@@ -6,73 +6,77 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('orders', '0001_initial'),
+        ("orders", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='order',
-            name='address',
-            field=models.CharField(max_length=250, verbose_name='Address'),
+            model_name="order",
+            name="address",
+            field=models.CharField(max_length=250, verbose_name="Address"),
         ),
         migrations.AlterField(
-            model_name='order',
-            name='city',
-            field=models.CharField(max_length=100, verbose_name='City'),
+            model_name="order",
+            name="city",
+            field=models.CharField(max_length=100, verbose_name="City"),
         ),
         migrations.AlterField(
-            model_name='order',
-            name='created',
-            field=models.DateTimeField(auto_now_add=True, verbose_name='Created'),
+            model_name="order",
+            name="created",
+            field=models.DateTimeField(auto_now_add=True, verbose_name="Created"),
         ),
         migrations.AlterField(
-            model_name='order',
-            name='discount',
-            field=models.IntegerField(default=0, verbose_name='Discount'),
+            model_name="order",
+            name="discount",
+            field=models.IntegerField(default=0, verbose_name="Discount"),
         ),
         migrations.AlterField(
-            model_name='order',
-            name='email',
-            field=models.EmailField(max_length=254, verbose_name='Email'),
+            model_name="order",
+            name="email",
+            field=models.EmailField(max_length=254, verbose_name="Email"),
         ),
         migrations.AlterField(
-            model_name='order',
-            name='first_name',
-            field=models.CharField(max_length=100, verbose_name='First name'),
+            model_name="order",
+            name="first_name",
+            field=models.CharField(max_length=100, verbose_name="First name"),
         ),
         migrations.AlterField(
-            model_name='order',
-            name='last_name',
-            field=models.CharField(max_length=100, verbose_name='Last name'),
+            model_name="order",
+            name="last_name",
+            field=models.CharField(max_length=100, verbose_name="Last name"),
         ),
         migrations.AlterField(
-            model_name='order',
-            name='paid',
-            field=models.BooleanField(default=False, verbose_name='Paid'),
+            model_name="order",
+            name="paid",
+            field=models.BooleanField(default=False, verbose_name="Paid"),
         ),
         migrations.AlterField(
-            model_name='order',
-            name='postal_code',
-            field=models.CharField(max_length=20, verbose_name='Postal code'),
+            model_name="order",
+            name="postal_code",
+            field=models.CharField(max_length=20, verbose_name="Postal code"),
         ),
         migrations.AlterField(
-            model_name='order',
-            name='stripe_id',
-            field=models.CharField(blank=True, max_length=255, verbose_name='Stripe ID'),
+            model_name="order",
+            name="stripe_id",
+            field=models.CharField(
+                blank=True, max_length=255, verbose_name="Stripe ID"
+            ),
         ),
         migrations.AlterField(
-            model_name='order',
-            name='updated',
-            field=models.DateTimeField(auto_now=True, verbose_name='Updated'),
+            model_name="order",
+            name="updated",
+            field=models.DateTimeField(auto_now=True, verbose_name="Updated"),
         ),
         migrations.AlterField(
-            model_name='orderitem',
-            name='price',
-            field=models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Price'),
+            model_name="orderitem",
+            name="price",
+            field=models.DecimalField(
+                decimal_places=2, max_digits=10, verbose_name="Price"
+            ),
         ),
         migrations.AlterField(
-            model_name='orderitem',
-            name='quantity',
-            field=models.PositiveIntegerField(default=1, verbose_name='Quantity'),
+            model_name="orderitem",
+            name="quantity",
+            field=models.PositiveIntegerField(default=1, verbose_name="Quantity"),
         ),
     ]

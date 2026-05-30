@@ -8,20 +8,26 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('books', '0004_book_is_available'),
+        ("books", "0004_book_is_available"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='book',
-            name='published_at',
-            field=models.DateField(auto_now_add=True, default='2026-01-01', verbose_name='Release date'),
+            model_name="book",
+            name="published_at",
+            field=models.DateField(
+                auto_now_add=True, default="2026-01-01", verbose_name="Release date"
+            ),
             preserve_default=False,
         ),
         migrations.AlterField(
-            model_name='book',
-            name='author',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL),
+            model_name="book",
+            name="author",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
     ]

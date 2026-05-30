@@ -7,54 +7,76 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('books', '0002_rename_poblished_at_book_published_at'),
+        ("books", "0002_rename_poblished_at_book_published_at"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Category',
+            name="Category",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100, verbose_name='Category Name')),
-                ('slug', models.SlugField(unique=True, verbose_name='URL Slug')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(max_length=100, verbose_name="Category Name"),
+                ),
+                ("slug", models.SlugField(unique=True, verbose_name="URL Slug")),
             ],
         ),
         migrations.RemoveField(
-            model_name='book',
-            name='name',
+            model_name="book",
+            name="name",
         ),
         migrations.RemoveField(
-            model_name='book',
-            name='published_at',
+            model_name="book",
+            name="published_at",
         ),
         migrations.AddField(
-            model_name='book',
-            name='description',
-            field=models.TextField(blank=True, null=True, verbose_name='Description'),
+            model_name="book",
+            name="description",
+            field=models.TextField(blank=True, null=True, verbose_name="Description"),
         ),
         migrations.AddField(
-            model_name='book',
-            name='price',
-            field=models.DecimalField(decimal_places=2, default=0, max_digits=10, verbose_name='Price'),
+            model_name="book",
+            name="price",
+            field=models.DecimalField(
+                decimal_places=2, default=0, max_digits=10, verbose_name="Price"
+            ),
         ),
         migrations.AddField(
-            model_name='book',
-            name='stock',
-            field=models.PositiveIntegerField(default=0, verbose_name='In Stock'),
+            model_name="book",
+            name="stock",
+            field=models.PositiveIntegerField(default=0, verbose_name="In Stock"),
         ),
         migrations.AddField(
-            model_name='book',
-            name='title',
-            field=models.CharField(default=0, max_length=200, verbose_name='Book title'),
+            model_name="book",
+            name="title",
+            field=models.CharField(
+                default=0, max_length=200, verbose_name="Book title"
+            ),
         ),
         migrations.AlterField(
-            model_name='book',
-            name='author',
-            field=models.CharField(max_length=100, verbose_name='Author'),
+            model_name="book",
+            name="author",
+            field=models.CharField(max_length=100, verbose_name="Author"),
         ),
         migrations.AddField(
-            model_name='book',
-            name='category',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='books', to='books.category', verbose_name='Category'),
+            model_name="book",
+            name="category",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="books",
+                to="books.category",
+                verbose_name="Category",
+            ),
         ),
     ]

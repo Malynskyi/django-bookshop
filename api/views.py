@@ -4,7 +4,11 @@ from django.shortcuts import get_object_or_404
 
 from rest_framework import status, viewsets
 from rest_framework.decorators import action
-from rest_framework.permissions import IsAdminUser, IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.permissions import (
+    IsAdminUser,
+    IsAuthenticated,
+    IsAuthenticatedOrReadOnly,
+)
 from rest_framework.response import Response
 
 from books.models import Book, Category
@@ -63,17 +67,21 @@ class CartViewSet(viewsets.ViewSet):
         data = []
 
         for item in cart:
-            data.append({
-                "book": BookSerializer(item["book"]).data,
-                "quantity": item["quantity"],
-                "price": str(item["price"]),
-                "total_price": str(item["total_price"]),
-            })
+            data.append(
+                {
+                    "book": BookSerializer(item["book"]).data,
+                    "quantity": item["quantity"],
+                    "price": str(item["price"]),
+                    "total_price": str(item["total_price"]),
+                }
+            )
 
-        return Response({
-            "items": data,
-            "total_price": str(cart.get_total_price()),
-        })
+        return Response(
+            {
+                "items": data,
+                "total_price": str(cart.get_total_price()),
+            }
+        )
 
     @action(detail=False, methods=["post"])
     def add(self, request):
@@ -88,7 +96,9 @@ class CartViewSet(viewsets.ViewSet):
             override_quantity=serializer.validated_data["override"],
         )
 
-        return Response({"detail": "Book added to cart"}, status=status.HTTP_201_CREATED)
+        return Response(
+            {"detail": "Book added to cart"}, status=status.HTTP_201_CREATED
+        )
 
     @action(detail=False, methods=["post"])
     def remove(self, request):

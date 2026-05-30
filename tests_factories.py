@@ -11,6 +11,7 @@ class CategoryFactory(factory.django.DjangoModelFactory):
     name = factory.Sequence(lambda n: f"Category {n}")
     slug = factory.Sequence(lambda n: f"category-{n}")
 
+
 class BookFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Book

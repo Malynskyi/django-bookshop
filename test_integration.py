@@ -76,14 +76,17 @@ def test_integration_order_create_sends_email(mock_send_email_task, client):
         {"quantity": 1, "override": False},
     )
 
-    response = client.post(reverse("orders:order_create"), {
-        "first_name": "Dmytro",
-        "last_name": "Malynskyi",
-        "email": "malynskyidmytro@gmail.com",
-        "address": "Dmytro street",
-        "postal_code": "12345",
-        "city": "Odessa",
-    })
+    response = client.post(
+        reverse("orders:order_create"),
+        {
+            "first_name": "Dmytro",
+            "last_name": "Malynskyi",
+            "email": "malynskyidmytro@gmail.com",
+            "address": "Dmytro street",
+            "postal_code": "12345",
+            "city": "Odessa",
+        },
+    )
 
     assert response.status_code == 302
     assert mock_send_email_task.called
@@ -98,14 +101,17 @@ def test_integration_order_created_in_db(mock_send_email_task, client):
         {"quantity": 2, "override": False},
     )
 
-    client.post(reverse("orders:order_create"), {
-        "first_name": "Dmytro",
-        "last_name": "Malynskyi",
-        "email": "malynskyidmytro@gmail.com",
-        "address": "Mal street",
-        "postal_code": "12345",
-        "city": "Odessa",
-    })
+    client.post(
+        reverse("orders:order_create"),
+        {
+            "first_name": "Dmytro",
+            "last_name": "Malynskyi",
+            "email": "malynskyidmytro@gmail.com",
+            "address": "Mal street",
+            "postal_code": "12345",
+            "city": "Odessa",
+        },
+    )
 
     assert Order.objects.count() == 1
 
@@ -119,14 +125,17 @@ def test_integration_order_items_created(mock_send_email_task, client):
         {"quantity": 3, "override": False},
     )
 
-    order_response = client.post(reverse("orders:order_create"), {
-        "first_name": "Dmytro",
-        "last_name": "Malynskyi",
-        "email": "malynskyidmytro@gmail.com",
-        "address": "Dmytro street",
-        "postal_code": "12345",
-        "city": "Odessa",
-    })
+    order_response = client.post(
+        reverse("orders:order_create"),
+        {
+            "first_name": "Dmytro",
+            "last_name": "Malynskyi",
+            "email": "malynskyidmytro@gmail.com",
+            "address": "Dmytro street",
+            "postal_code": "12345",
+            "city": "Odessa",
+        },
+    )
 
     order = Order.objects.first()
     assert order.items.count() == 1
@@ -141,14 +150,17 @@ def test_integration_order_create_redirects_to_payment(mock_send_email_task, cli
         {"quantity": 1, "override": False},
     )
 
-    response = client.post(reverse("orders:order_create"), {
-        "first_name": "Dmytro",
-        "last_name": "Malynskyi",
-        "email": "malynskyidmytro@gmail.com",
-        "address": "Test street",
-        "postal_code": "12345",
-        "city": "Odessa",
-    })
+    response = client.post(
+        reverse("orders:order_create"),
+        {
+            "first_name": "Dmytro",
+            "last_name": "Malynskyi",
+            "email": "malynskyidmytro@gmail.com",
+            "address": "Test street",
+            "postal_code": "12345",
+            "city": "Odessa",
+        },
+    )
 
     assert response.status_code == 302
 

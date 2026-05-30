@@ -13,7 +13,7 @@ def cart_add(request, book_id):
         cart.add(
             book=book,
             quantity=form.cleaned_data["quantity"],
-            override_quantity=form.cleaned_data["override"]
+            override_quantity=form.cleaned_data["override"],
         )
 
     return redirect("cart:cart_detail")
@@ -31,10 +31,7 @@ def cart_detail(request):
 
     for item in cart:
         item["update_quantity_form"] = CartAddBookForm(
-            initial={
-                "quantity": item["quantity"],
-                "override": True
-            }
+            initial={"quantity": item["quantity"], "override": True}
         )
 
     return render(request, "cart/detail.html", {"cart": cart})

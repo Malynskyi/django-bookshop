@@ -1,12 +1,9 @@
-
 from .base import *
 
 import os
 import sentry_sdk
 
 from sentry_sdk.integrations.django import DjangoIntegration
-
-
 
 SENTRY_DSN = os.getenv("SENTRY_DSN")
 
@@ -19,7 +16,6 @@ if SENTRY_DSN:
     )
 
 
-
 DEBUG = False
 
 SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
@@ -29,21 +25,13 @@ DJANGO_ALLOWED_HOSTS = env_list("DJANGO_ALLOWED_HOSTS", default=[".onrender.com"
 CSRF_TRUSTED_ORIGINS = env_list("DJANGO_CSRF_TRUSTED_ORIGINS")
 
 
-
-
-INSTALLED_APPS = [
-    app
-    for app in INSTALLED_APPS
-    if app != "debug_toolbar"
-]
+INSTALLED_APPS = [app for app in INSTALLED_APPS if app != "debug_toolbar"]
 
 MIDDLEWARE = [
     middleware
     for middleware in MIDDLEWARE
     if middleware != "debug_toolbar.middleware.DebugToolbarMiddleware"
 ]
-
-
 
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
@@ -64,12 +52,7 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 X_FRAME_OPTIONS = "DENY"
 
 
-
-STATICFILES_STORAGE = (
-    "whitenoise.storage.CompressedManifestStaticFilesStorage"
-)
-
-
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 CACHES = {
@@ -81,11 +64,9 @@ CACHES = {
         ),
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-        }
+        },
     }
 }
-
-
 
 
 CELERY_BROKER_URL = (
@@ -104,8 +85,6 @@ CELERY_RESULT_SERIALIZER = "json"
 CELERY_TIMEZONE = "UTC"
 
 
-
-
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,
@@ -121,9 +100,6 @@ LOGGING = {
 }
 
 
-
-
 REST_FRAMEWORK["DEFAULT_RENDERER_CLASSES"] = [
     "rest_framework.renderers.JSONRenderer",
 ]
-

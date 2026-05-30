@@ -12,14 +12,20 @@
 #         {'books': books, 'demo_models': demo_models}
 #     )
 
-from typing import Any 
+from typing import Any
 
 from django.db.models.query import QuerySet
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse_lazy
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import TemplateView, ListView, DetailView, FormView, CreateView
+from django.views.generic import (
+    TemplateView,
+    ListView,
+    DetailView,
+    FormView,
+    CreateView,
+)
 from django.db.models import Q, Count
 from books.forms import MeetingForm
 from .models import Book, Category, Meeting
@@ -29,7 +35,7 @@ from books.mixins import (
     BookNameFilterMixin,
     AuthorNameFilterMixin,
     AuthorBookNameMixin,
-    GodModRequiredMixin
+    GodModRequiredMixin,
 )
 from django.views.generic import UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -44,23 +50,24 @@ from django.http import Http404
 
 
 class MainPage(GodModRequiredMixin, AuthorFilteredTemplateResponseMixin, TemplateView):
-    template_name = 'books/index.html'
-    context_param_name = 'recent'
+    template_name = "books/index.html"
+    context_param_name = "recent"
     model = Book
 
 
 class BookCreateView(PermissionRequiredMixin, CreateView):
     model = Book
-    fields = ['title', 'description', 'category', 'is_available']
-    template_name = 'books/book_form.html'
-    success_url = reverse_lazy('books:list')
-    permission_required = 'books.add_book'
+    fields = ["title", "description", "category", "is_available"]
+    template_name = "books/book_form.html"
+    success_url = reverse_lazy("books:list")
+    permission_required = "books.add_book"
+
 
 @method_decorator(cache_page(60 * 5), name="dispatch")
 class BookListView(ListView):
     model = Book
-    template_name = 'books/book_list.html'
-    context_object_name = 'books'
+    template_name = "books/book_list.html"
+    context_object_name = "books"
     paginate_by = 5
 
     def get_context_data(self, **kwargs):
@@ -71,8 +78,8 @@ class BookListView(ListView):
     def get_queryset(self):
         queryset = Book.objects.all()
 
-        title = self.request.GET.get('title')
-        author = self.request.GET.get('author')
+        title = self.request.GET.get("title")
+        author = self.request.GET.get("author")
 
         if title:
             queryset = queryset.filter(title__icontains=title)
@@ -81,12 +88,12 @@ class BookListView(ListView):
             queryset = queryset.filter(author__username__icontains=author)
 
         return queryset
-    
+
 
 class BookDetail(LoginRequiredMixin, DetailView):
     model = Book
-    template_name = 'books/details.html'
-    context_object_name = 'book'
+    template_name = "books/details.html"
+    context_object_name = "book"
 
     def get_object(self, queryset=None):
         book_id = self.kwargs["pk"]
@@ -96,8 +103,7 @@ class BookDetail(LoginRequiredMixin, DetailView):
 
         if book is None:
             book = (
-                Book.objects
-                .select_related("author", "category")
+                Book.objects.select_related("author", "category")
                 .filter(pk=book_id, is_available=True)
                 .first()
             )
@@ -111,57 +117,54 @@ class BookDetail(LoginRequiredMixin, DetailView):
 
 
 def category_list(request):
-    categories = Category.objects.annotate(book_count=Count('books'))
+    categories = Category.objects.annotate(book_count=Count("books"))
 
-    return render(request, 'books/categories.html', {
-        'categories': categories
-    })
+    return render(request, "books/categories.html", {"categories": categories})
 
 
 def all_meeting(request):
     all_meets = Meeting.objects.all()
-    return render(request, 'all_meets.html', {'meets': all_meets})
+    return render(request, "all_meets.html", {"meets": all_meets})
+
 
 def create_meeting(request):
     form = MeetingForm()
-    if request.method == 'POST':
+    if request.method == "POST":
         form = MeetingForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('all_meeting')
-    return render(request, 'create_meeting.html', {'form': form})
+            return redirect("all_meeting")
+    return render(request, "create_meeting.html", {"form": form})
 
 
 class CreateMeeting(FormView):
-    template_name = 'create_meeting.html'
+    template_name = "create_meeting.html"
     form_class = MeetingForm
-    success_url = reverse_lazy('books:list')
+    success_url = reverse_lazy("books:list")
 
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)
-    
 
-class BookUpdateView(PermissionRequiredMixin, UpdateView): 
+
+class BookUpdateView(PermissionRequiredMixin, UpdateView):
     model = Book
-    fields = ['title', 'description', 'category', 'is_available']
-    template_name = 'books/book_form.html'
-    success_url = reverse_lazy('books:list')
-    permission_required = 'books.change_book'
+    fields = ["title", "description", "category", "is_available"]
+    template_name = "books/book_form.html"
+    success_url = reverse_lazy("books:list")
+    permission_required = "books.change_book"
 
 
 class BookDeleteView(PermissionRequiredMixin, DeleteView):
     model = Book
-    template_name = 'books/book_confirm_delete.html'
-    success_url = reverse_lazy('books:list')
-    permission_required = 'books.delete_book'
+    template_name = "books/book_confirm_delete.html"
+    success_url = reverse_lazy("books:list")
+    permission_required = "books.delete_book"
 
 
 class LibrarianPageView(PermissionRequiredMixin, TemplateView):
     template_name = "books/librarian_page.html"
     permission_required = "books.add_book"
-
-
 
 
 async def async_books_count(request):
@@ -180,11 +183,10 @@ async def async_first_book(request):
     if book is None:
         return JsonResponse({"book": None})
 
-    return JsonResponse({
-        "id": book.id,
-        "title": book.title,
-        "price": str(book.price),
-    })
-
-
-
+    return JsonResponse(
+        {
+            "id": book.id,
+            "title": book.title,
+            "price": str(book.price),
+        }
+    )

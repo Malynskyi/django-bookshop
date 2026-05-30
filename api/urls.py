@@ -9,7 +9,6 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 from .views import BookViewSet, CartViewSet, CategoryViewSet, OrderViewSet
 
-
 router = DefaultRouter()
 router.register("books", BookViewSet, basename="api-books")
 router.register("categories", CategoryViewSet, basename="api-categories")
