@@ -3,6 +3,7 @@ from django.db.models import Count
 from django.shortcuts import get_object_or_404
 
 from rest_framework import status, viewsets
+from rest_framework.decorators import api_view
 from rest_framework.decorators import action
 from rest_framework.permissions import (
     IsAdminUser,
@@ -22,7 +23,7 @@ from .serializers import (
     CategorySerializer,
     OrderSerializer,
 )
-
+from .atlas_client import AtlasAPIError, get_warehouses
 
 class CategoryViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.annotate(books_count=Count("books"))
@@ -116,3 +117,29 @@ class CartViewSet(viewsets.ViewSet):
         cart.clear()
 
         return Response({"detail": "Cart cleared"})
+    
+
+@api_view(["GET"])
+def warehouse_status(request):
+    try:
+        data = get_warehouses()
+        return Response(
+            {
+                "service": "bookshop",
+                "atlas_status": "connected",
+                "warehouses": data,
+            }
+        )
+    except AtlasAPIError as exc:
+        return Response(
+            {
+                "service": "bookshop",
+                "atlas_status": "error",
+                "error": str(exc),
+            },
+            status=status.HTTP_503_SERVICE_UNAVAILABLE,
+        )
+    
+
+
+    

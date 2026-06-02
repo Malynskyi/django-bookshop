@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     "demo_app.apps.DemoAppConfig",
     "books.apps.BooksConfig",
     "user_account",
-    "debug_toolbar",
+    # "debug_toolbar",
     "orders",
     "cart",
     "rest_framework",
@@ -78,7 +78,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    # "debug_toolbar.middleware.DebugToolbarMiddleware",
     "user_account.middleware.RequestLogMiddleware",
 ]
 

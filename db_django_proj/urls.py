@@ -35,8 +35,8 @@ urlpatterns = [
     path("health/", health_check, name="health_check"),
     path("api/", include("api.urls")),
 ]
-if settings.DEBUG:
-    urlpatterns.append(path("__debug__/", include("debug_toolbar.urls")))
+# if settings.DEBUG:
+#     urlpatterns.append(path("__debug__/", include("debug_toolbar.urls")))
 
 
 urlpatterns += i18n_patterns(
