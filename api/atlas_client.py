@@ -14,9 +14,13 @@ def get_warehouses():
     atlas_url = os.getenv("ATLAS_API_URL", "https://atlas-service-ovqp.onrender.com")
 
     try:
+        print("ATLAS TOKEN:", os.getenv("ATLAS_ACCESS_TOKEN"))
         response = requests.get(
-            f"{atlas_url}/api/warehouses/",
-            timeout=5,
+            f"{atlas_url}/api/stock/",
+            headers={
+                "Authorization": f"Bearer {os.getenv('ATLAS_ACCESS_TOKEN')}",
+            },
+            timeout=30,
         )
 
         if response.status_code == 401:
